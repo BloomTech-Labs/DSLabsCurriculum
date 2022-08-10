@@ -1,6 +1,6 @@
 from typing import Optional
 
-from pydantic import BaseModel, validator
+from pydantic import BaseModel, validator, conint
 
 
 class LevelRangeError(Exception):
@@ -13,22 +13,13 @@ class LevelRangeError(Exception):
 class MonsterModel(BaseModel):
     name: str
     type: str
-    level: int
+    level: conint(ge=1, le=20)
     rarity: str
     damage: str
     health: float
     energy: float
     sanity: float
     time_stamp: str
-
-    @validator("level")
-    @classmethod
-    def validate_level(cls, level: int):
-        if level not in range(1, 21):
-            raise LevelRangeError(
-                message=f"Level: {level}, outside acceptable range[1, 20]",
-            )
-        return level
 
 
 class MonsterQueryModel(BaseModel):

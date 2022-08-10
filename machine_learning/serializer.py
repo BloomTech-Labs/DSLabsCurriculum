@@ -1,4 +1,4 @@
-""" Run this script to create a serialized model """
+""" Run this script to create a serialized model: `model.joblib` """
 import time
 
 from data_model.database import MongoDB
