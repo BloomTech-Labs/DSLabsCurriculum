@@ -1,4 +1,4 @@
-# Bloom Institute of Technology
+# Bloom Institute of Technology: Labs
 ## Data Science Engineering
 
 ### Welcome to Labs!
